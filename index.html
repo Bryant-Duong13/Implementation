@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Los Angeles County Trails</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* body*/
+        body {
+            font-family: 'Inter', sans-serif;
+            background: white;
+            padding: 40px 20px;
+        }
+
+        /* container*/
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Hero section*/
+        .hero {
+            min-height: 600px;
+            background: black;
+            background: url('img/LAHeader.jpg');
+            border-radius: 24px;
+            margin-bottom: 60px;
+            display: flex;
+        }
+
+        /* Hero content */
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            text-align: left;
+            padding: 40px 20px;
+        }
+
+        /* Hero header1*/
+        .heroh1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            font-weight: 900;
+            color: white;
+            margin-top: 400px;
+            line-height: 1.2;
+            max-width: 900px;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 5px black;
+        }
+
+        /* Hero subtitle*/
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: white;
+            margin-bottom: 40px;
+            max-width: 600px;
+            line-height: 1.6;
+            text-shadow: 6px 6px 6px black;
+        }
+
+        /* Hero buttons*/
+        .button-group {
+            display: flex;
+            gap: 20px;
+            /* Space between the two buttons */
+            margin-bottom: 30px;
+        }
+
+        /* Button style*/
+        .btn-primary {
+            font-family: 'Playfair Display', serif;
+            padding: 18px 42px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 16px;
+            background: #8A6337;
+            color: white;
+        }
+
+        /* Adventure card and featured trail section */
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Adventure card*/
+        .adventure-card {
+            background: #52A624;
+            border-radius: 28px;
+            padding: 50px 40px;
+        }
+
+        /* Headline inside adventure card */
+        .adventure-cardh2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: black;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        /* Paragraph text inside adventure card */
+        .adventure-card-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: black;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        /* Featured trail */
+        .featured-trail {
+            background: #52A624;
+            border-radius: 28px;
+            padding: 40px;
+        }
+
+        /* Title at top of featured trail card */
+        .featured-trail-h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: black;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Trail content */
+        .trail-content {
+            font-family: 'Playfair Display', serif;
+            line-height: 2.0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        /* Images of featured trail */
+        .trail-image {
+            background: url('img/FeaturedTrail.jpg');
+            border-radius: 20px;
+            aspect-ratio: 4/3;
+            display: flex;
+        }
+
+        /* Caption text below image */
+        .image-caption {
+            text-align: center;
+            font-size: 14px;
+            font-style: italic;
+            color: black;
+            margin-top: 12px;
+        }
+
+        /* Bottom card trail section*/
+        .bottom-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* Bottom trail cards */
+        .trail-card {
+            background: #52A624;
+            border-radius: 28px;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        /* Bottom trail card content */
+        .trail-card-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        /* Bottom trail card images */
+        .trail-card-image {
+            background: url('img/CostalTrail.jpg');
+            border-radius: 20px;
+            aspect-ratio: 1/1;
+            display: flex;
+        }
+
+        .trail-card-image2 {
+            background: url('img/PasadenaTrail.jpg');
+            border-radius: 20px;
+            aspect-ratio: 1/1;
+            display: flex;
+        }
+
+        /* Buttons for bottom trail cards*/
+        .btn-trail {
+            font-family: 'Playfair Display', serif;
+            padding: 18px 42px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 16px;
+            background: #8A6337;
+            color: white;
+            text-align: left;
+            margin-left: 75px;
+        }
+
+        /* Text section in bottom trail cards */
+        .trail-card-info-h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: black;
+            margin-top: 5px;
+            margin-bottom: 16px;
+            border-bottom: 3px solid black;
+            padding-bottom: 10px;
+        }
+
+        /* foramt for texts about trails */
+        .trail-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 600;
+            color: black;
+            margin-bottom: 12px;
+        }
+
+        /* Apply this to all screen sizes */
+        .two-column,
+        .trail-content,
+        .bottom-cards {
+            grid-template-columns: 1fr;
+        }
+
+        /* Apply styles when the screen is 768px or larger */
+        @media (min-width: 768px) {
+            .trail-content,
+            .bottom-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Apply styles when the screen is 1024 px or larger */
+        @media (min-width: 1024px) {
+            .two-column {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="heroh1">Discover Los Angeles County through trails, history, and unforgettable views.</h1>
+
+                <p class="hero-subtitle">
+                    A curated trail guide for outdoor enthusiasts who want to explore the diverse landscapes and stories
+                    of the greater Los Angeles area.
+                </p>
+
+                <div class="button-group">
+                    <a href="#exploretrails">
+                        <button class="btn btn-primary">Explore Trails</button>
+                    </a>
+                    <a href="faq.html">
+                        <button class="btn btn-primary">FAQs</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="two-column">
+
+            <div class="adventure-card">
+                <h2 class="adventure-cardh2">Are you ready for a life-changing adventure?</h2>
+                <p class="adventure-card-text">Come explore the beautiful nature and rich history woven through Los
+                    Angeles County's trails.</p>
+                <a href="#exploretrails">
+                    <button class="btn btn-primary">Explore Trails</button>
+                </a>
+            </div>
+
+            <div class="featured-trail">
+                <h3 class="featured-trail-h3">Trail Of The Week : LA River Heritage Ride</h3>
+                <div class="trail-content">
+                    <div>
+                        <div class="trail-image"></div>
+                        <p class="image-caption">Los Angeles River Bike Path</p>
+                    </div>
+                    <div class="trail-text">
+                        <p>Ride through LA's history along the LA River, from the natural Glendale Narrows to the urban
+                            LA River Bike Path and Los Angeles State Historic Park. This easy route blends scenic views
+                            with cultural landmarks for a unique city ride.</p>
+                        <button class="btn-primary">Check out Trail!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bottom-cards">
+
+            <div class="trail-card">
+                <div class="trail-card-content">
+                    <div class="trail-card-image"></div>
+
+                    <div class="trail-card-info">
+                        <h3 class="trail-card-info-h3" id="exploretrails">Last Week's Featured Trail: Coastal Heritage
+                            Ride</h3>
+                        <p class="trail-text">Trail Difficulty: Moderate</p>
+                        <div class="trail-text">
+                            <li>Ride along the LA River, where nautral landscapes meet urban history.</li>
+                            <li>Highlights early seaside tourism of the West Coast.</li>
+                            <li>This trail connects historic piers, early surf culture, and modern coastal communities.
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-trail">View Trail</button>
+            </div>
+
+            <div class="trail-card">
+                <div class="trail-card-content">
+                    <div class="trail-card-image2"></div>
+
+                    <div class="trail-card-info">
+                        <h3 class="trail-card-info-h3">Next Week's Mystery Trail: Pasadena Heritage Loop</h3>
+                        <p class="trail-text">Trail Difficulty: Hard</p>
+                        <div class="trail-text">
+                            <li>Loop through Pasadena's historic streets and green spaces.</li>
+                            <li>Explore the National Histroic Landmark of the Rose Bowl.</li>
+                            <li>Reflect through early LA suburban and transportation history with classic architecture
+                                and landmarks.</li>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn-trail">View Trail</button>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
